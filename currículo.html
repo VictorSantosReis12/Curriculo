@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Victor Santos — Portfólio</title>
+    <meta name="description"
+        content="Portfólio de Victor Santos dos Reis — Desenvolvedor Fullstack (React Native, Node.js, MySQL)." />
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --accent: #60a5fa;
+            --muted: #94a3b8;
+            --glass: rgba(255, 255, 255, 0.03)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            margin: 0;
+            background: linear-gradient(180deg, #071028 0%, #071227 60%);
+            color: #e6eef8;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.45
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 32px auto;
+            padding: 20px
+        }
+
+        header {
+            display: flex;
+            gap: 20px;
+            align-items: center
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #0ea5e9, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 36px;
+            color: white;
+            box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6)
+        }
+
+        .hero-info {
+            flex: 1
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 22px
+        }
+
+        p.lead {
+            margin: 6px 0 12px;
+            color: var(--muted)
+        }
+
+        .contacts {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .chip {
+            background: var(--glass);
+            padding: 8px 10px;
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--muted);
+            display: inline-flex;
+            gap: 8px;
+            align-items: center
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 20px;
+            margin-top: 20px
+        }
+
+        @media (max-width:900px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            .avatar {
+                width: 96px;
+                height: 96px;
+                font-size: 30px
+            }
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            font-size: 16px
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px
+        }
+
+        .skill {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .project {
+            border-radius: 10px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.015);
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.02)
+        }
+
+        .project h3 {
+            margin: 0;
+            font-size: 14px
+        }
+
+        .project p {
+            margin: 6px 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .techs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px
+        }
+
+        .tech {
+            font-size: 12px;
+            padding: 6px 8px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--muted)
+        }
+
+        .proj-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            cursor: pointer;
+            font-size: 13px
+        }
+
+        .sidebar .card {
+            margin-bottom: 16px
+        }
+
+        .edu {
+            font-size: 14px;
+            color: var(--muted)
+        }
+
+        footer {
+            margin-top: 28px;
+            color: var(--muted);
+            text-align: center;
+            font-size: 13px
+        }
+
+        .topbar {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0
+        }
+
+        .hamb {
+            display: inline-flex;
+            gap: 6px;
+            align-items: center
+        }
+
+        @media (max-width:900px) {
+            .topbar {
+                display: flex
+            }
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div style="display:flex;gap:12px;align-items:center">
+                <div class="avatar">VS</div>
+                <div>
+                    <strong>Victor Santos</strong>
+                    <div class="muted" style="font-size:13px">Fullstack • React Native • Node.js</div>
+                </div>
+            </div>
+            <div class="hamb">
+                <a class="chip" href="mailto:victorsantosreis6@gmail.com">Contact</a>
+                <a class="chip" href="#projects">Projetos</a>
+            </div>
+        </div>
+
+        <header>
+            <div class="avatar">VS</div>
+            <div class="hero-info">
+                <h1>Victor Santos dos Reis</h1>
+                <p class="lead">Desenvolvedor Fullstack com experiência em front-end, back-end e bancos de dados.
+                    Trabalho com aplicações web e mobile (React Native), elaborando soluções práticas, escaláveis e com
+                    foco na experiência do usuário.</p>
+                <div class="contacts">
+                    <a class="chip" href="mailto:victorsantosreis6@gmail.com">✉ victorsantosreis6@gmail.com</a>
+                    <a class="chip" href="tel:+5551993886889">☎ +55 51 99388-6889</a>
+                    <a class="chip" href="https://www.linkedin.com/in/victor-santos-67a935293"
+                        target="_blank">LinkedIn</a>
+                    <a class="chip" href="https://github.com/VictorSantosReis12" target="_blank">GitHub</a>
+                    <a class="chip" href="#projects">Projetos</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="grid">
+            <section>
+                <div class="card">
+                    <h2>Resumo Profissional</h2>
+                    <p class="muted">Sou um desenvolvedor fullstack com habilidade para trabalhar tanto no front-end
+                        quanto no back-end, além de experiência com bancos de dados relacionais. Tenho foco em construir
+                        aplicações úteis e acessíveis, com atenção à performance e manutenção do código.</p>
+                </div>
+
+                <div class="card" id="projects" style="margin-top:16px">
+                    <h2>Projetos em Destaque</h2>
+
+                    <article class="project">
+                        <h3>Smart KiloWatch</h3>
+                        <p>Aplicativo (TCC) para monitorar e reduzir consumo de energia e água, com gráficos, tabelas e
+                            metas. Versões para desktop e mobile; em desenvolvimento.</p>
+                        <div class="techs">
+                            <span class="tech">React Native</span>
+                            <span class="tech">Node.js</span>
+                            <span class="tech">MySQL</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a class="btn" href="https://github.com/VictorSantosReis12/Smart_KiloWatch"
+                                target="_blank">Abrir repositório</a>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <h3>Mystic Market</h3>
+                        <p>Site de um mercado de itens místicos para prática de CRUD e fluxo de compra (itens
+                            ilustrativos).</p>
+                        <div class="techs">
+                            <span class="tech">HTML</span>
+                            <span class="tech">CSS</span>
+                            <span class="tech">JavaScript</span>
+                            <span class="tech">Node.js</span>
+                            <span class="tech">MySQL</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a class="btn" href="https://github.com/VictorSantosReis12/mercado-mistico"
+                                target="_blank">Abrir repositório</a>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <h3>Ctrl+Shift+Dev</h3>
+                        <p>Jogo do tipo "run" com duração de 10 minutos; objetivo: completar tarefas sem ser descoberto
+                            pelo chefe. Implementa dificuldades e conquistas.</p>
+                        <div class="techs">
+                            <span class="tech">HTML</span>
+                            <span class="tech">CSS</span>
+                            <span class="tech">JavaScript</span>
+                            <span class="tech">Node.js</span>
+                            <span class="tech">MySQL</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a class="btn" href="https://github.com/mateusrg/hackathon-3A-ctrl-shift-dev"
+                                target="_blank">Abrir repositório</a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="card" style="margin-top:16px">
+                    <h2>Experiência</h2>
+                    <p class="muted">Projetos acadêmicos e pessoais com foco em desenvolvimento web e mobile.
+                        Experiência em elaboração de aplicações completas (frontend + backend + banco).</p>
+                </div>
+
+            </section>
+
+            <aside class="sidebar">
+                <div class="card">
+                    <h2>Competências</h2>
+                    <div style="margin-top:8px">
+                        <div><strong>Linguagens</strong></div>
+                        <div class="skills" style="margin-top:8px">
+                            <span class="skill">JavaScript</span>
+                            <span class="skill">TypeScript</span>
+                            <span class="skill">Python</span>
+                            <span class="skill">SQL</span>
+                            <span class="skill">HTML</span>
+                            <span class="skill">CSS</span>
+                        </div>
+
+                        <div style="margin-top:12px"><strong>Frameworks / Bibliotecas</strong></div>
+                        <div class="skills" style="margin-top:8px">
+                            <span class="skill">React Native</span>
+                            <span class="skill">Node.js</span>
+                            <span class="skill">Express</span>
+                            <span class="skill">Bootstrap</span>
+                        </div>
+
+                        <div style="margin-top:12px"><strong>Bancos de Dados</strong></div>
+                        <div class="skills" style="margin-top:8px">
+                            <span class="skill">MySQL</span>
+                        </div>
+
+                        <div style="margin-top:12px"><strong>Ferramentas</strong></div>
+                        <div class="skills" style="margin-top:8px">
+                            <span class="skill">Git</span>
+                            <span class="skill">GitHub</span>
+                            <span class="skill">Figma</span>
+                            <span class="skill">VSCode</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Formação</h2>
+                    <div class="edu">
+                        <div><strong>Ensino Médio Integrado — Técnico em Desenvolvimento Web</strong></div>
+                        <div class="muted">Senac São Leopoldo (2023–2025)</div>
+                        <div style="height:8px"></div>
+                        <div><strong>Ensino Fundamental I e II</strong></div>
+                        <div class="muted">La Salle Esteio (2014–2022)</div>
+                        <div style="height:8px"></div>
+                        <div><strong>Curso de Inglês</strong></div>
+                        <div class="muted">CCAA Esteio (2023–2028)</div>
+                        <div style="height:8px"></div>
+                        <div><strong>Curso Profissionalizante de Empreendedorismo</strong></div>
+                        <div class="muted">Uniasselvi (2025)</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Links</h2>
+                    <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+                        <a class="btn" href="https://github.com/VictorSantosReis12" target="_blank">GitHub</a>
+                        <a class="btn" href="https://www.linkedin.com/in/victor-santos-67a935293"
+                            target="_blank">LinkedIn</a>
+                        <a class="btn" href="mailto:victorsantosreis6@gmail.com">Enviar e-mail</a>
+                    </div>
+                </div>
+
+            </aside>
+        </main>
+
+        <footer>
+            Feito por <strong>Victor Santos dos Reis</strong> — Esteio/RS • <span class="muted">Email:
+                victorsantosreis6@gmail.com</span>
+        </footer>
+    </div>
+</body>
+
+</html>
